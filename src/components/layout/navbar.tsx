@@ -7,6 +7,7 @@ import { formatPrice } from '@/lib/utils';
 import { cn } from '@/lib/utils';
 import { CartModal } from '@/components/ui/cart-modal';
 import { ConfirmationCard } from '@/components/ui/confirmation-card';
+import posspoleLogo from "/assets/posspole.png";
 
 export function Navbar() {
   const isAdmin = useIsAdmin();
@@ -54,8 +55,12 @@ export function Navbar() {
             to="/" 
             className="flex items-center gap-2 text-primary-600"
           >
-            <Package className="h-8 w-8" />
-            <span className="text-2xl font-bold">POSSPOLE</span>
+            <img 
+              src={posspoleLogo} 
+              alt="PossPole Logo" 
+              className="h-9 w-auto"
+            />
+           
           </Link>
 
           {/* Desktop Navigation */}
