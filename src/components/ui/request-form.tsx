@@ -40,6 +40,7 @@ export function RequestForm({ type, onClose, onSuccess }: RequestFormProps) {
         const { id, reference_number } = await submitBuyRequest(requestData)
         onSuccess({
           ...requestData,
+          id,
           reference_number,
           type: 'buy',
           items: buyCart.map(item => ({
@@ -53,6 +54,7 @@ export function RequestForm({ type, onClose, onSuccess }: RequestFormProps) {
         const { id, reference_number } = await submitDonateRequest(requestData)
         onSuccess({
           ...requestData,
+          id,
           reference_number,
           type: 'donate',
           items: donateCart.map(item => ({

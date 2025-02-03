@@ -24,12 +24,12 @@ interface AppState {
     name: string
     email: string
     phone: string
-  }) => Promise<{ id: string }>
+  }) => Promise<{ id: string, reference_number: string }>
   submitDonateRequest: (data: {
     name: string
     email: string
     phone: string
-  }) => Promise<{ id: string }>
+  }) => Promise<{ id: string, reference_number: string }>
 }
 
 export const useStore = create<AppState>((set, get) => ({
@@ -126,7 +126,7 @@ export const useStore = create<AppState>((set, get) => ({
           type: 'buy',
           status: 'pending'
         })
-        .select()
+        .select('id, reference_number')
         .single()
       
       if (requestError) throw requestError
@@ -152,7 +152,7 @@ export const useStore = create<AppState>((set, get) => ({
       }
       
       get().clearBuyCart()
-      return { id: request.id }
+      return { id: request.id, reference_number: request.reference_number }
     } catch (error) {
       console.error('Failed to submit buy request:', error)
       throw error
@@ -173,7 +173,7 @@ export const useStore = create<AppState>((set, get) => ({
           type: 'donate',
           status: 'pending'
         })
-        .select()
+        .select('id, reference_number')
         .single()
       
       if (requestError) throw requestError
@@ -199,7 +199,7 @@ export const useStore = create<AppState>((set, get) => ({
       }
       
       get().clearDonateCart()
-      return { id: request.id }
+      return { id: request.id, reference_number: request.reference_number }
     } catch (error) {
       console.error('Failed to submit donate request:', error)
       throw error
