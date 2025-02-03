@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import posspoleLogo from "/assets/posspole-modified.png";
 import {
   Facebook,
   Twitter,
@@ -22,11 +23,20 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <Package className="h-8 w-8 text-primary" />
-              <span className="text-2xl font-bold">POSSPOLE</span>
+            <Link 
+            to="/" 
+            className="flex items-center gap-2 text-primary-600"
+          >
+            <img 
+              src={posspoleLogo} 
+              alt="PossPole Logo" 
+              className="h-9 w-auto"
+            />
+           
+          </Link>
             </div>
             <p className="text-secondary-200">
-              Your trusted marketplace for laboratory and medical equipment.
+              Your trusted marketplace for Electrical, Laboratory and Medical Equipment.
             </p>
           </div>
 
@@ -35,18 +45,18 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-primary" />
-                <span>+1 (555) 123-4567</span>
+                <span>+91 86181-45049</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-primary" />
-                <span>support@rfqmarket.com</span>
+                <span>letmein@posspole.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-primary" />
                 <span>
-                  123 Market St, Suite 100
+                POSSPOLE PVT LTD, Krishi Bhavan, Before, Cubbon Park Rd,
                   <br />
-                  San Francisco, CA 94105
+                Nunegundlapalli, Ambedkar Veedhi, Bengaluru, Karnataka 560001
                 </span>
               </div>
             </div>
@@ -107,20 +117,6 @@ export function Footer() {
               </a>
             </div>
             <div>
-              <h4 className="text-white font-semibold mb-2">Newsletter</h4>
-              <form className="flex">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="bg-white/10 text-white px-4 py-2 rounded-l-md flex-1 focus:outline-none focus:ring-2 focus:ring-primary"
-                />
-                <button
-                  type="submit"
-                  className="bg-primary text-white px-4 py-2 rounded-r-md hover:bg-primary-600 transition-colors"
-                >
-                  Subscribe
-                </button>
-              </form>
             </div>
           </div>
         </div>
