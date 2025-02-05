@@ -20,15 +20,30 @@ export function EmailModal({ onClose, recipient, type }: EmailModalProps) {
   const templates = {
     buy: {
       subject: `Your Buy Request Update - POSSPOLE`,
-      body: `Dear ${recipient.name},\n\nThank you for your buy request at POSSPOLE. We are writing to inform you about your request status.\n\nBest regards,\nPOSSPOLE Team`
+      body: `Dear ${recipient.name},
+
+Thank you for your buy request at POSSPOLE. We are writing to inform you about your request status.
+
+Best regards,
+POSSPOLE Team`
     },
     sell: {
       subject: `Your Seller Application Update - POSSPOLE`,
-      body: `Dear ${recipient.name},\n\nThank you for applying to be a seller at POSSPOLE. We are writing regarding your application status.\n\nBest regards,\nPOSSPOLE Team`
+      body: `Dear ${recipient.name},
+
+Thank you for applying to be a seller at POSSPOLE. We are writing regarding your application status.
+
+Best regards,
+POSSPOLE Team`
     },
     donate: {
       subject: `Your Donation Request Update - POSSPOLE`,
-      body: `Dear ${recipient.name},\n\nThank you for your donation request at POSSPOLE. We are writing to inform you about your request status.\n\nBest regards,\nPOSSPOLE Team`
+      body: `Dear ${recipient.name},
+
+Thank you for your donation request at POSSPOLE. We are writing to inform you about your request status.
+
+Best regards,
+POSSPOLE Team`
     }
   }
 
@@ -61,7 +76,7 @@ export function EmailModal({ onClose, recipient, type }: EmailModalProps) {
   }
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
       <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full">
         <div className="p-6">
           <div className="flex justify-between items-center mb-6">

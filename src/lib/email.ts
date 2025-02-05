@@ -3,6 +3,8 @@ import emailjs from '@emailjs/browser'
 const SERVICE_ID = 'service_z450tvm'
 const TEMPLATE_ID = 'template_lvotr5c'
 const PUBLIC_KEY = 'o6RjUf7Hdwd0pKKF0'
+const FROM_EMAIL = 'krishnamurthym@posspole.com'
+const FROM_NAME = 'POSSPOLE Team'
 
 // Initialize EmailJS with the public key
 emailjs.init(PUBLIC_KEY)
@@ -24,8 +26,9 @@ export async function sendEmail(params: EmailParams) {
         to_name: params.to_name,
         subject: params.subject,
         message: params.message,
-        from_name: 'POSSPOLE Team',
-        reply_to: 'support@posspole.com'
+        from_name: FROM_NAME,
+        from_email: FROM_EMAIL,
+        reply_to: FROM_EMAIL
       }
     )
 
