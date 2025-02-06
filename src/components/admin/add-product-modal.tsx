@@ -24,7 +24,8 @@ const SELL_CATEGORIES = [
   'Refrigeration and Cooling System',
   'Specialized Systems',
   'Sterilization Equipment',
-  'Tissue Processing and Histology'
+  'Tissue Processing and Histology',
+  'Research and Development'
 ];
 
 const BUY_CATEGORIES = [
