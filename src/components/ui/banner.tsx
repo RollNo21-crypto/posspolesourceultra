@@ -86,7 +86,95 @@
 //   )
 // }
 
+// import React, { useState, useEffect } from "react";
+// import { ChevronLeft, ChevronRight } from "lucide-react";
+// import buyBanner from "/assets/buybanner.jpg";
+// import mobileBuy from "/assets/mobilebuy.jpg";
+// import donateBanner from "/assets/donatebanner.jpg";
+// import mobileDonate from "/assets/mobiledonate.jpg";
+// import sellBanner from "/assets/sellbanner.jpg";
+// import mobileSell from "/assets/mobilesell.jpg";
+
+// const banners = [
+//   { id: 1, desktopImage: buyBanner, mobileImage: mobileBuy, alt: "Buy & Sell" },
+//   { id: 2, desktopImage: donateBanner, mobileImage: mobileDonate, alt: "Donate Items" },
+//   { id: 3, desktopImage: sellBanner, mobileImage: mobileSell, alt: "Sell Products" },
+// ];
+
+// export function Banner() {
+//   const [currentSlide, setCurrentSlide] = useState(0);
+//   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+//   useEffect(() => {
+//     const handleResize = () => setIsMobile(window.innerWidth <= 768);
+//     window.addEventListener("resize", handleResize);
+//     return () => window.removeEventListener("resize", handleResize);
+//   }, []);
+
+//   useEffect(() => {
+//     const timer = setInterval(() => {
+//       setCurrentSlide((prev) => (prev + 1) % banners.length);
+//     }, 4000);
+//     return () => clearInterval(timer);
+//   }, []);
+
+//   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % banners.length);
+//   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + banners.length) % banners.length);
+
+//   return (
+//     <div className="relative w-full h-[38vh] md:h-[85vh] flex justify-center items-center overflow-hidden">
+//       {banners.map((banner, index) => (
+//         <div
+//           key={banner.id}
+//           className={`absolute w-full max-w-[90%] md:max-w-full h-full transition-opacity duration-1000 ${
+//             index === currentSlide ? "opacity-100 visible" : "opacity-0 invisible"
+//           }`}
+//         >
+//           <picture>
+//             <source media="(max-width: 768px)" srcSet={banner.mobileImage} />
+//             <img
+//               src={banner.desktopImage}
+//               alt={banner.alt}
+//               className="w-full h-full object-contain rounded-lg md:rounded-none"
+//               loading="lazy"
+//             />
+//           </picture>
+//         </div>
+//       ))}
+
+//       {/* Navigation Buttons */}
+//       <button
+//         onClick={prevSlide}
+//         className="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 bg-black/50 p-2 md:p-4 rounded-full hover:bg-black/70 transition"
+//       >
+//         <ChevronLeft className="h-5 w-5 md:h-6 md:w-6 text-white" />
+//       </button>
+
+//       <button
+//         onClick={nextSlide}
+//         className="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 bg-black/50 p-2 md:p-4 rounded-full hover:bg-black/70 transition"
+//       >
+//         <ChevronRight className="h-5 w-5 md:h-6 md:w-6 text-white" />
+//       </button>
+
+//       {/* Dots Indicator */}
+//       <div className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+//         {banners.map((_, index) => (
+//           <button
+//             key={index}
+//             onClick={() => setCurrentSlide(index)}
+//             className={`h-2.5 w-2.5 md:h-3 md:w-3 rounded-full transition-all ${
+//               index === currentSlide ? "bg-white scale-125" : "bg-primary/50"
+//             }`}
+//           />
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
+
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import buyBanner from "/assets/buybanner.jpg";
 import mobileBuy from "/assets/mobilebuy.jpg";
@@ -96,20 +184,14 @@ import sellBanner from "/assets/sellbanner.jpg";
 import mobileSell from "/assets/mobilesell.jpg";
 
 const banners = [
-  { id: 1, desktopImage: buyBanner, mobileImage: mobileBuy, alt: "Buy & Sell" },
-  { id: 2, desktopImage: donateBanner, mobileImage: mobileDonate, alt: "Donate Items" },
-  { id: 3, desktopImage: sellBanner, mobileImage: mobileSell, alt: "Sell Products" },
+  { id: 1, desktopImage: buyBanner, mobileImage: mobileBuy, alt: "Buy & Sell", path: "/buy" },
+  { id: 2, desktopImage: donateBanner, mobileImage: mobileDonate, alt: "Donate Items", path: "/donate" },
+  { id: 3, desktopImage: sellBanner, mobileImage: mobileSell, alt: "Sell Products", path: "/sell" },
 ];
 
 export function Banner() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -126,9 +208,10 @@ export function Banner() {
       {banners.map((banner, index) => (
         <div
           key={banner.id}
-          className={`absolute w-full max-w-[90%] md:max-w-full h-full transition-opacity duration-1000 ${
+          className={`absolute w-full max-w-[90%] md:max-w-full h-full transition-opacity duration-1000 cursor-pointer ${
             index === currentSlide ? "opacity-100 visible" : "opacity-0 invisible"
           }`}
+          onClick={() => navigate(banner.path)}
         >
           <picture>
             <source media="(max-width: 768px)" srcSet={banner.mobileImage} />
