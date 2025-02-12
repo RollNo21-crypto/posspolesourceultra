@@ -46,7 +46,7 @@ export function Home() {
       </section>
       
       {/* Seller CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-indigo-600 to-purple-600">
+      <section className="bg-[rgba(0,0,0,0.7)] text-white py-16 mb-12">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             Start Selling With Us Today
@@ -57,7 +57,7 @@ export function Home() {
           </p>
           <Link
             to="/sell"
-            className="inline-block bg-white text-indigo-600 px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors"
+            className="inline-block bg-white text-[#008BBF] px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors"
           >
             Register as Seller
           </Link>
