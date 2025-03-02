@@ -134,11 +134,11 @@ export function ConfirmationCard({ type, data, onClose }: ConfirmationCardProps)
                       {type === 'buy' && item.price && (
                         <div className="text-right">
                           <p className="font-semibold text-sm sm:text-base text-gray-900">
-                            ₹{(item.price * (item.quantity || 1)).toLocaleString()}
+                            {/* ₹{(item.price * (item.quantity || 1)).toLocaleString()} */}
                           </p>
                           {item.quantity > 1 && (
                             <p className="text-xs text-gray-500">
-                              (₹{item.price.toLocaleString()} each)
+                              {/* (₹{item.price.toLocaleString()} each) */}
                             </p>
                           )}
                         </div>

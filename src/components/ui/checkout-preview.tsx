@@ -68,7 +68,7 @@ export function CheckoutPreview({ type, items, onProceed, onClose }: CheckoutPre
                         <>
                           <span className="text-sm text-gray-400">•</span>
                           <span className="text-sm font-medium text-gray-900">
-                            {formatPrice(item.price * item.quantity)}
+                            {/* {formatPrice(item.price * item.quantity)} */}
                           </span>
                         </>
                       )}
@@ -85,7 +85,7 @@ export function CheckoutPreview({ type, items, onProceed, onClose }: CheckoutPre
               <div className="flex justify-between items-center">
                 <span className="text-lg font-medium text-gray-900">Total Amount</span>
                 <span className="text-2xl font-bold text-gray-900">
-                  {formatPrice(totalAmount)}
+                  {/* {formatPrice(totalAmount)} */}
                 </span>
               </div>
             </div>

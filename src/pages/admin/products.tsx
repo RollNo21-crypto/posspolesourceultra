@@ -180,7 +180,7 @@ export function AdminProducts() {
                   </td>
                   <td className="px-6 py-4">
                     <div className="text-sm text-gray-900">{product.category}</div>
-                    <div className="text-sm text-gray-500">{formatPrice(product.price)}</div>
+                    {/* <div className="text-sm text-gray-500">{formatPrice(product.price)}</div> */}
                   </td>
                   <td className="px-6 py-4">
                     <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${

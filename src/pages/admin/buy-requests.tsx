@@ -177,7 +177,7 @@ export function AdminBuyRequests() {
                           />
                           <div>
                             <div className="font-medium">{product.title}</div>
-                            <div className="text-gray-500">{formatPrice(product.price)}</div>
+                            {/* <div className="text-gray-500">{formatPrice(product.price)}</div> */}
                           </div>
                         </div>
                       ))}

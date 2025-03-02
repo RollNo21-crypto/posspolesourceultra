@@ -99,7 +99,7 @@ export function ProductPage() {
 
           {product.type === 'buy' && (
             <div className="mb-6">
-              <p className="text-2xl font-bold text-gray-900">{formatPrice(product.price)}</p>
+              {/* <p className="text-2xl font-bold text-gray-900">{formatPrice(product.price)}</p> */}
             </div>
           )}
 

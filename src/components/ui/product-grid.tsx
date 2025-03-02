@@ -431,7 +431,7 @@ export function ProductGrid({ type, limit }: ProductGridProps) {
                     <div className="flex items-center justify-between">
                       {type === 'buy' && (
                         <span className="text-lg font-bold text-accent">
-                          {formatPrice(product.price)}
+                          {/* {formatPrice(product.price)} */}
                         </span>
                       )}
                       <div className="flex items-center space-x-2">

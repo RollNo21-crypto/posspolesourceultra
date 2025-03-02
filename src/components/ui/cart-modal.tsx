@@ -130,7 +130,7 @@ export function CartModal({ type, onClose, onSubmitSuccess }: CartModalProps) {
                         <p className="text-sm text-gray-500">{item.category}</p>
                         {type === 'buy' && (
                           <p className="text-sm font-medium text-primary-600 mt-1">
-                            {formatPrice(item.price * item.quantity)}
+                            {/* {formatPrice(item.price * item.quantity)} */}
                           </p>
                         )}
                         <div className="flex items-center gap-3 mt-2">
@@ -167,9 +167,9 @@ export function CartModal({ type, onClose, onSubmitSuccess }: CartModalProps) {
               <div className="border-t p-6">
                 {type === 'buy' && (
                   <div className="flex justify-between items-center mb-6">
-                    <span className="text-lg font-medium text-gray-900">Total</span>
+                    {/* <span className="text-lg font-medium text-gray-900">Total</span> */}
                     <span className="text-2xl font-bold text-gray-900">
-                      {formatPrice(totalAmount)}
+                      {/* {formatPrice(totalAmount)} */}
                     </span>
                   </div>
                 )}
